@@ -51,4 +51,4 @@ const Form = mongoose.model("Form", formSchema);
 //   return schema.validate({ name });
 // }
 
-module.exports = { formSchema, Form, validateForm };
+module.exports = { formSchema, Form };
