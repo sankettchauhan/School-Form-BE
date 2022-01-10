@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const config = require("config");
 const forms = require("./routes/forms");
+const cors = require("cors");
 
 mongoose.connect(config.get("db"), {
   useNewUrlParser: true,
@@ -21,6 +22,9 @@ db.on("error", (err) => console.log(err));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+
+// add cors
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("server is running..");
